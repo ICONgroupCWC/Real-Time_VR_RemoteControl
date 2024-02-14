@@ -1,0 +1,6 @@
+<launch>
+ 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find turtle_jet)/rviz/jetbot_gmapping.rviz"/>
+  
+</launch>
