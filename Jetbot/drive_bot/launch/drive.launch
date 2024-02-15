@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="joy" type="joy_node" name="joy_node">
+    
+  </node>
+<!-- <node pkg="drive_bot" type="drive.py" name="drive_joy">
+    
+</node> -->
+
+ <node pkg="drive_bot" type="main.py" name="main" output="screen" />  
+
+ <!-- <node pkg="drive_bot" type="publish.py" name="connection_pub" output="screen" /> -->
+
+  <include file="$(find connection_check)/launch/network.launch" />
+  <include file="$(find text2speech)/launch/text2speech.launch" />
+
+</launch>

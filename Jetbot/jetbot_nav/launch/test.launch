@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="open_rviz" default="true"/>
+    <arg name="map_file" default="$(find jetbot_slam)/map/floor_map.yaml"/>
+
+ <!-- Map server -->
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+    <!-- <include file="$(find jetbot_nav)/launch/jetbot.launch" /> -->
+    
+
+  <!-- Turtlebot3 -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+    <arg name="model" value="$(arg model)" />
+  </include>
+
+
+  <!-- AMCL -->
+  <include file="$(find jetbot_nav)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find jetbot_nav)/launch/move_base.launch">
+    <arg name="model" value="$(arg model)" />
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+  
+    <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find jetbot_nav)/rviz/turtlebot3_navigation.rviz"/>
+    </group>
+    <!-- <node pkg="jetbot_nav" type="init_pose.py" name="set_initialpose" output="screen"> -->
+        
+    <!-- </node> -->
+
+</launch>

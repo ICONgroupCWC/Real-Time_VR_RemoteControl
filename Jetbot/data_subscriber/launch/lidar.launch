@@ -1,0 +1,5 @@
+<launch>
+    <!-- <node pkg="data_subscriber" type="sub_depth.py" name="img_sub" output="screen"/> -->
+    <node pkg="data_subscriber" type="ldata.py" name="lidar_data" output="screen"/>
+   <include file="$(find ros_tcp_endpoint)/launch/endpoint.launch" />
+</launch>

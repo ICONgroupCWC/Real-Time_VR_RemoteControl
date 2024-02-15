@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="map_file" default="$(find jetbot_slam)/map/tellus_back.yaml"/>
+ <!-- Map server -->
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+    <include file="$(find jetbot_nav)/launch/lidar.launch" />
+    <include file="$(find jetbot_slam)/launch/jetbot.launch" />
+    <include file="$(find jetbot_nav)/launch/turtlebot3_navigation.launch" />
+
+    <node pkg="jetbot_nav" type="init_pose.py" name="set_initialpose" output="screen">
+        
+    </node>
+   
+    <node pkg="jetbot_nav" type="final_goal.py" name="target" output="screen">
+        
+    </node>
+
+    <!-- <include file="$(find data_transfer)/launch/img_pub.launch" /> -->
+   <include file="$(find jetbot_nav)/launch/drive.launch" />
+   <include file="$(find connection_check)/launch/network.launch" />
+   <include file="$(find ros_tcp_endpoint)/launch/endpoint.launch" />
+</launch>

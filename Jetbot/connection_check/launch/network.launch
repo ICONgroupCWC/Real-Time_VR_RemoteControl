@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="connection_check" type="check.py" name="check_connection" output="screen" />
+
+</launch>

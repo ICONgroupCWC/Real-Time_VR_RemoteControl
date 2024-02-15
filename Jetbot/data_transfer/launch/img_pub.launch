@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="data_transfer" type="pub_depthmap.py" name="publisher_img"  required="True" output="screen">
+        
+    </node>
+</launch>

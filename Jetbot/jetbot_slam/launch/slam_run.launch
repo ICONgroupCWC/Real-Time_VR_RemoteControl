@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find jetbot_slam)/launch/jetbot_slam.launch" />
+    <include file="$(find jetbot_slam)/launch/jetbot.launch" />
+    <include file="$(find jetbot_slam)/launch/drive.launch" />
+</launch>

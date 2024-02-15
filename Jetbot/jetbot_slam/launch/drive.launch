@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="joy" type="joy_node" name="joy_node">
+    
+  </node>
+<node pkg="drive_bot" type="drive.py" name="drive_joy" output="screen"/>
+    
+
+<node pkg="jetbot_slam" type="save_map.py" name="save_map" output="screen"/>
+
+
+</launch>
