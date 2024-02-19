@@ -32,4 +32,14 @@ source ~/<ros_workspace>/devel/setup.bash
 
 
 ### Server A
+Server A is an Ubuntu OS running machine equipped with ROS (Robot Operating System).To set up Server A, first, create a ROS workspace. Next, download this GitHub repository. Finally, copy the Server A folder into your ROS workspace and  build your workspace:
+```
+cd ~/<ros_workspace>/
+catkin_make
+source ~/<ros_workspace>/devel/setup.bash
+```
 ### Server B
+
+## Demo in action
+[![Real-Time Remote Control via VR over Limited Wireless Connectivity](https://img.youtube.com/vi/1Hd78-bGPe0/0.jpg)](https://www.youtube.com/watch?v=1Hd78-bGPe0)
+## Contributors
