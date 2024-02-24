@@ -43,3 +43,7 @@ source ~/<ros_workspace>/devel/setup.bash
 ## Demo in action
 [![Real-Time Remote Control via VR over Limited Wireless Connectivity](https://img.youtube.com/vi/1Hd78-bGPe0/0.jpg)](https://www.youtube.com/watch?v=1Hd78-bGPe0)
 ## Contributors
+1. H.P. Madushanka ([madushanka.hewapathiranage@oulu.fi](madushanka.hewapathiranage@oulu.fi))
+2. Rafaela Scaciota ([rafaela.scaciotatimoesdasilva@oulu.fi](rafaela.scaciotatimoesdasilva@oulu.fi))
+3. Sumudu Samarakoon ([sumudu.samarakoon@oulu.fi](sumudu.samarakoon@oulu.fi))
+4. Mehdi Bennis ([mehdi.bennis@oulu.fi](mehdi.bennis@oulu.fi))
