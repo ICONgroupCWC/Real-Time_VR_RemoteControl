@@ -23,13 +23,13 @@ Furthermore, the installation process involved setting up the RealSense SDK by d
 ```
 pip install opencv-python
 ```
-Moreover, the TurtleBot3 ROS packages were downloaded and set up by following the instructions provided on the official page.Please refer to the [official page](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview).Now, download this GitHub repository and copy the robot folder to your ROS workspace. After copying the folder, build your workspace:
+Moreover, the TurtleBot3 ROS packages were downloaded and set up by following the instructions provided on the official page.Please refer to the [official page](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview).Now, download this GitHub repository and copy the Jetbot folder to your ROS workspace. After copying the folder, build your workspace:
 ```
 cd ~/<ros_workspace>/
 catkin_make
 source ~/<ros_workspace>/devel/setup.bash
 ```
-
+Now insert the IP address of server B into the code located at 'Jetbot/connection_check/src/check.py'.
 
 ### Server A
 Server A is an Ubuntu OS running machine equipped with ROS (Robot Operating System).To set up Server A, first, create a ROS workspace. Next, download this GitHub repository. Finally, copy the Server A folder into your ROS workspace and  build your workspace:
@@ -40,6 +40,33 @@ source ~/<ros_workspace>/devel/setup.bash
 ```
 ### Server B
 
+To configure server B, employ a machine equipped with the Windows 11 OS. Start by installing the Unity software. Next, import the Varjo XR plugin, the ROS TCP Connector plugin, and the URDF Importer plugin into the Unity game engine. Refer to the instructions provided on the official page below for guidance.
+- [Varjo VR](https://github.com/varjocom/VarjoUnityXRPlugin)
+- [Ros TCP connector](https://github.com/Unity-Technologies/ROS-TCP-Connector)
+- [URDF importer](https://github.com/Unity-Technologies/URDF-Importer)
+
+Next, add the Server B Asset folder to your Unity project.  
+
+## Creating a 2D Map for Navigation
+To generate the occupancy grid map for navigation purposes, begin by establishing a connection to the robot via server A using SSH.Once connected, execute the following command in the terminal to launch the SLAM (Simultaneous Localization and Mapping) module:
+```
+roslaunch jetbot_slam slam_run.launch
+```
+Next, switch to the terminal of server A and run the following command to visualize the SLAM output:
+```
+roslaunch turtle_jet jetbot_slam_view.launch
+```
+After exploring the designated area, ensure to save the resulting 2D map for navigation purposes.
+## Real-Time Remote Control via VR over Limited Wireless Connectivity
+Now, ensure that both the robot and the server computer are connected to the same Wi-Fi network.Set the robot’s initial position approximately the same on both the virtual map and the physical test area. Proceed to establish an SSH connection to the robot through server A. Execute the following command to initiate navigation:
+```
+roslaunch jetbot_nav nav_run.launch
+```
+Following this, open another terminal on server A and execute the command below to visualize the navigation output:
+```
+roslaunch turtle_jet jetbot_nav_view.launch
+```
+Finally, execute your Unity project on server B.
 ## Demo in action
 [![Real-Time Remote Control via VR over Limited Wireless Connectivity](https://img.youtube.com/vi/1Hd78-bGPe0/0.jpg)](https://www.youtube.com/watch?v=1Hd78-bGPe0)
 ## Contributors
