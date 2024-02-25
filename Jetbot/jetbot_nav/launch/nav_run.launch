@@ -19,4 +19,5 @@
    <include file="$(find jetbot_nav)/launch/drive.launch" />
    <include file="$(find connection_check)/launch/network.launch" />
    <include file="$(find ros_tcp_endpoint)/launch/endpoint.launch" />
+   <include file="$(find data_subscriber)/launch/img_sub.launch" />
 </launch>
