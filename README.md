@@ -1,4 +1,4 @@
-# Real-Time_VR_RemoteControl
+# Real-Time Remote Control via VR over Limited Wireless Connectivity [[arXiv](https://arxiv.org/abs/2406.17420)]
 This repository showcases a project aimed at addressing the challenge of efficient navigation and operation in semi-autonomous robotics, particularly in environments with limited connectivity between robots and humans. By integrating control systems, communication networks, and computation servers, we aim to create a user-friendly semi-autonomous system. Our approach involves remote control via a VR interface, allowing a human operator to control the robot in real time, even in dynamic environments. In instances of connectivity loss, the robot autonomously navigates towards its last known destination while avoiding obstacles until the connection is restored. Our results demonstrate the adaptability of our system, ensuring seamless transitions between remote control and autonomous navigation, thus promising improved human-robot interaction in challenging settings.
 
 ## System Architecture
